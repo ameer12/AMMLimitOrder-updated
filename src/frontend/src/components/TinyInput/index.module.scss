@@ -1,0 +1,19 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+
+$width: 86px;
+$height: 42px;
+$border-radius: 21px;
+
+.input {
+  outline: none;
+  width: $width;
+  height: $height;
+  text-align: center;
+  border: 1px solid colors.$border-color;
+  border-radius: $border-radius;
+  background-color: white;
+  color: rgba(colors.$primary-dark-color, 80%);
+  font-size: 1.125rem;
+  font-weight: 500;
+}

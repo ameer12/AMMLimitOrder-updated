@@ -1,0 +1,25 @@
+@use "sass:color";
+@use "colors";
+
+
+$border-radius: 50px;
+$toast-radius: 18px;
+
+%chart {
+  height: 100%;
+  width: 100%;
+
+  &-container {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.chartTooltip {
+  background-color: colors.$primary-dark-color;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.75rem 1rem;
+}

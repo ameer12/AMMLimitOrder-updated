@@ -1,0 +1,112 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/constants";
+@use "../../assets/styles/mixins";
+
+.container {
+  border-radius: constants.$border-radius;
+  background-color: black;
+  padding: 2.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+  min-width: 280px;
+  max-width: 450px;
+  width: 90%;
+
+  .title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    h2 {
+      font-weight: 700;
+      margin: 0;
+      flex: 1;
+    }
+
+    svg {
+      @include mixins.hover-lighten;
+    }
+  }
+}
+
+.transactionSummary {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 1.125rem;
+  font-weight: 700;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    display: inline;
+    margin-right: 1rem;
+    color: colors.$primary-dark-color;
+  }
+
+  span {
+    margin-left: 0.75rem;
+  }
+
+  img {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+
+    @include mixins.round-image;
+  }
+}
+
+.estimation {
+  font-weight: 500;
+  font-style: italic;
+  text-align: justify;
+  margin: 0 0 1rem;
+  font-size: 1rem;
+
+  strong {
+    font-weight: 700;
+    color: colors.$primary-color;
+  }
+}
+
+.transactionInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 20px;
+  gap: 0.5rem;
+  font-size: 1rem;
+
+  label {
+    font-weight: 500;
+  }
+
+  span {
+    font-weight: 700;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    img {
+      min-width: 1.5rem;
+      min-height: 1.5rem;
+      max-width: 1.5rem;
+      max-height: 1.5rem;
+
+      @include mixins.round-image;
+    }
+  }
+
+  .priceImpactIncr {
+    color: colors.$increasing-color;
+  }
+
+  .priceImpactDecr {
+    color: colors.$decreasing-color;
+  }
+}

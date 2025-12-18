@@ -1,0 +1,46 @@
+@mixin hover-darken {
+  transition: filter 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+@mixin hover-lighten {
+  transition: filter 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+@mixin hover-background {
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(black, 0.1);
+    cursor: pointer;
+  }
+}
+
+@mixin disabled {
+  transition: filter 0.2s;
+  pointer-events: none;
+  filter: grayscale(0.5) brightness(0.8);
+}
+
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin round-image {
+  border-radius: 50%;
+}

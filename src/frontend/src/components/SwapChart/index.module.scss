@@ -1,0 +1,114 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+@use "../../assets/styles/constants";
+
+.container {
+  border: solid 2px #2B2649;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #130F25;
+  gap: 10px;
+  min-width: 300px;
+  min-height: 530px;
+  overflow: hidden;
+}
+
+.header {
+  padding: 3rem 1.75rem;
+  display: flex;
+  flex-flow: column nowrap;
+  color: white;
+}
+
+.title {
+  display: inline-flex;
+  gap: 10px;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: white;
+
+  img {
+    @include mixins.round-image;
+
+    max-width: 2.5rem;
+    min-width: 2.5rem;
+    max-height: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+  svg {
+    @include mixins.hover-darken;
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: 900;
+    color: white;
+  }
+}
+
+.info {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  gap: 1rem;
+
+  .ratio {
+    color: colors.$primary-dark-color;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: baseline;
+
+    h4 {
+      font-weight: 900;
+      margin: 0;
+      font-size: 2.25rem;
+      color: white;
+    }
+
+    span {
+      font-weight: 900;
+      opacity: 0.5;
+      font-size: 1rem;
+      color: white;
+    }
+  }
+
+  .diff {
+    color: colors.$increasing-color;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .decreasing {
+    color: white;
+  }
+
+  .timeSpanSelector {
+    flex: 1;
+    display: inline-flex;
+    justify-content: flex-end;
+  }
+}
+
+.chartContainer {
+  @extend %chart-container;
+}
+
+.chart {
+  @extend %chart;
+
+  align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .info {
+    gap: 0.25rem;
+
+    .diff {
+      padding: 0 0.5rem;
+    }
+  }
+}

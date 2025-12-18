@@ -1,0 +1,95 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+
+.container {
+  border-radius: 14px;
+  border: 1px solid #2B2649;
+  background-color: #130F25;
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+
+.verticalLine {
+  min-width: 2px;
+  min-height: 100%;
+  background-color: colors.$primary-color;
+}
+
+.input {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  gap: 4px;
+
+  label {
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+
+  input {
+    padding: 0;
+    font-size: 1.125rem;
+    font-weight: 900;
+    border: none;
+    outline: none;
+    background-color: transparent !important;
+    appearance: none;
+    color: colors.$primary-color;
+    width: 100%;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+}
+
+.selector {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4px;
+  justify-content: space-between;
+
+  @include mixins.hover-lighten;
+
+  .coin {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    img {
+      @include mixins.round-image;
+
+      display: inline;
+      min-width: 2rem;
+      min-height: 2rem;
+      max-height: 2rem;
+      max-width: 2rem;
+    }
+
+    span {
+      font-weight: 900;
+      color: white;
+      font-size: 1.125rem;
+    }
+  }
+
+  .balance {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: end;
+
+    .max {
+      font-weight: 700;
+      color: colors.$primary-color;
+      font-size: 1rem;
+      padding: 0 10px;
+
+      @include mixins.hover-lighten;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+@use "../../assets/styles/constants";
+
+.panel {
+  border: solid 2px #2b2649;
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  display: flex;
+  background-color: #130f25;
+  flex-flow: column nowrap;
+  max-width: 400px;
+  min-width: 250px;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  color: black;
+
+  h2 {
+    margin: 0;
+    font-weight: 700;
+    color: white;
+    opacity: 0.8;
+  }
+
+  .action {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: colors.$primary-dark-color;
+
+    @include mixins.hover-lighten;
+  }
+}
+
+.switchButton {
+  margin: 1rem 0;
+  align-self: center;
+  border: 2px solid colors.$border-color;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 14px;
+    width: 14px;
+    transition: transform 0.2s;
+    stroke: colors.$primary-dark-color;
+  }
+
+  &:hover {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1rem;
+  font-weight: 500;
+  justify-content: center;
+  align-content: center;
+  height: 80px;
+  text-align: center;
+  border-radius: 14px;
+  background-color: colors.$primary-light-color;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  margin-top: 1rem;
+
+  &Title {
+    margin: 1.5rem 0 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  span {
+    flex: 1;
+    font-size: 1rem;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    font-weight: 900;
+    color: colors.$primary-color;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: colors.$primary-dark-color;
+  }
+}
+
+.actions {
+  display: grid;
+  grid-template-areas:
+    "first second"
+    "confirm confirm";
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  margin-top: 1rem;
+
+  %small {
+    padding: 0.75rem 1rem;
+  }
+
+  .first {
+    @extend %small;
+
+    grid-area: first;
+  }
+
+  .second {
+    @extend %small;
+
+    grid-area: second;
+  }
+
+  .confirm {
+    @extend %small;
+
+    grid-area: confirm;
+  }
+}

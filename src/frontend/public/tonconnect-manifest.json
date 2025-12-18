@@ -1,0 +1,7 @@
+{
+  "url": "http://127.0.0.1:5173",
+  "name": "TON DEX",
+  "iconUrl": "https://forfriends.me/assets/img/ton_symbol.png",
+  "termsOfUseUrl": "https://ton-connect.github.io/demo-dapp-with-wallet/terms-of-use.txt",
+  "privacyPolicyUrl": "https://ton-connect.github.io/demo-dapp-with-wallet/privacy-policy.txt"
+}

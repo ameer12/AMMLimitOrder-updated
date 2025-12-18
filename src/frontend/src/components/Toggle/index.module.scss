@@ -1,0 +1,40 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+
+$height: 30px;
+$width: 55px;
+$border-radius: 20px;
+$thumb-size: 22px;
+
+// 55 - 8 - 22
+$full-left: 25px;
+
+.container {
+  background-color: colors.$border-color;
+  height: $height;
+  width: $width;
+  display: inline;
+  border-radius: $border-radius;
+  position: relative;
+  transition: background-color 0.2s;
+
+  &Checked {
+    background-color: colors.$primary-color;
+  }
+}
+
+.thumb {
+  width: $thumb-size;
+  height: $thumb-size;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  margin: 4px;
+  transition: left 0.2s;
+  left: 0;
+  cursor: pointer;
+
+  &Checked {
+    left: $full-left;
+  }
+}

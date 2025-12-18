@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.enterMain {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.enter {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitMainActive {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.exitActive {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.3s, transform 0.3s;
+}

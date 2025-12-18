@@ -1,0 +1,143 @@
+@use '../../assets/styles/colors';
+@use '../../assets/styles/mixins';
+@use '../../assets/styles/constants';
+
+.panel {
+  border: solid 2px colors.$border-color;
+  border-radius: constants.$border-radius;
+  padding: 2rem 3rem;
+  display: flex;
+  background-color: white;
+  flex-flow: column nowrap;
+  max-width: 400px;
+  min-width: 250px;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  .text {
+    h2 {
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      stroke: colors.$primary-color;
+
+      @include mixins.hover-lighten;
+    }
+  }
+}
+
+.switchButton {
+  margin: 1rem 0;
+  align-self: center;
+  border: 2px solid colors.$border-color;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 14px;
+    width: 14px;
+    transition: transform 0.2s;
+    stroke: colors.$primary-dark-color;
+  }
+
+  @include mixins.hover-lighten;
+
+  &:hover {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.info {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  align-content: center;
+  gap: 10px;
+
+  span {
+    flex: 1;
+  }
+}
+.enter {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.input {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px;
+
+  label {
+    font-weight: 500;
+    font-size: 1rem;
+    flex-grow: 1;
+  }
+
+  input {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 900;
+    border: none;
+    outline: none;
+    background-color: transparent !important;
+    appearance: none;
+    color: colors.$primary-color;
+    text-align: end;
+    width: 100%;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ES2020",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "node",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "@frontend/*": ["src/frontend/src/*"],
+      "@backend/*": ["src/backend/src/*"]
+    },
+    "types" : ["vite/client", "node"]
+  },
+  "include": ["src"],
+  "exclude": [
+    "src/frontend/**/*",
+    "**/*.scss",
+    "**/*.css",
+    "node_modules",
+    // "node_modules"
+  ],
+  "ts-node": {
+    "experimentalSpecifierResolution": "node"
+  }
+}

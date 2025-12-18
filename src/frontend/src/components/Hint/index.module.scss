@@ -1,0 +1,56 @@
+@use "../../assets/styles/colors";
+
+.container {
+  display: inline;
+  padding: 0.5rem;
+  position: relative;
+
+  svg {
+    stroke: colors.$primary-dark-color;
+    transition: stroke 0.2s;
+    height: 0.75rem;
+    width: 0.75rem;
+
+    &:hover {
+      stroke: colors.$primary-color;
+    }
+  }
+}
+
+.box {
+  position: absolute;
+  border-radius: 30px 30px 30px 4px;
+  background-color: rgba(colors.$primary-dark-color, 0.95);
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+  bottom: 50%;
+  left: 50%;
+  width: 250px;
+  text-align: justify;
+}
+
+.enter {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.enterActive {
+  transform: translateY(0);
+  opacity: 1;
+  transform-origin: bottom center;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transform: translateY(10px);
+  transform-origin: bottom center;
+  transition: transform 0.2s, opacity 0.2s;
+}

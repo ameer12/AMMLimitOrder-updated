@@ -1,0 +1,17 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+
+$border-radius: 35px;
+
+.tab {
+  padding: 0;
+  border-radius: $border-radius;
+  gap: 0;
+}
+
+.item {
+  border-radius: $border-radius;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  font-size: 0.875rem;
+}

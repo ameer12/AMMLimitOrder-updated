@@ -1,0 +1,13 @@
+@use "sass:color";
+$primary-color: #08c;
+$primary-light-color: color.mix($primary-color, white, 15%);
+$primary-dark-color: #303757;
+$toast-background-color: #303757;
+$toast-success-background-color: #303757;
+$toast-failure-background-color: #eee24e;
+$toast-color: white;
+$toast-failure-color: #303757;
+$toast-success-color: white;
+$border-color: #dedfe4;
+$increasing-color: #27c5ab;
+$decreasing-color: #cc009c;

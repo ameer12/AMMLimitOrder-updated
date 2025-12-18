@@ -1,0 +1,99 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/mixins";
+
+$radius: 18px;
+$radius-small: 8px;
+$radius-large: 16px;
+
+.button {
+  outline: none;
+  border: none;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  @include mixins.hover-darken;
+}
+
+@keyframes loading-anim {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}
+
+%default {
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+%primary {
+  @extend %default;
+
+  background-color: colors.$primary-color;
+  color: white;
+}
+
+%secondary {
+  @extend %default;
+
+  background-color: colors.$primary-light-color;
+  color: colors.$primary-dark-color;
+}
+
+%normal {
+  padding: 0.5rem 1.5rem;
+  border-radius: $radius;
+}
+
+%large {
+  border-radius: $radius-large;
+  padding: 1rem 2rem;
+}
+
+%small {
+  border-radius: $radius-small;
+  padding: 0.25rem 1rem;
+  font-size: 0.75rem;
+}
+
+.primary {
+  @extend %primary;
+  @extend %normal;
+}
+
+.primaryLarge {
+  @extend %primary;
+  @extend %large;
+}
+
+.secondary {
+  @extend %secondary;
+  @extend %normal;
+}
+
+.secondaryLarge {
+  @extend %secondary;
+  @extend %large;
+}
+
+.primarySmall {
+  @extend %primary;
+  @extend %small;
+}
+
+.secondarySmall {
+  @extend %secondary;
+  @extend %small;
+}
+
+.disabled {
+  background-color: colors.$border-color;
+  color: rgba(colors.$primary-dark-color, 0.45);
+  pointer-events: none;
+}
+
+.loading {
+  @include mixins.disabled;
+}

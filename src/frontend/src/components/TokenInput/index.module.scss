@@ -1,0 +1,9 @@
+@use "../../assets/styles/colors";
+@use "../../assets/styles/constants";
+@use "../../assets/styles/mixins";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

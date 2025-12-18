@@ -1,0 +1,33 @@
+@use "../../assets/styles/colors";
+
+.container {
+  background-color: rgba(colors.$primary-dark-color, 0.8);
+  backdrop-filter: blur(3px) brightness(0.8);
+  position: fixed;
+  left: 0;
+  z-index: 200;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Enter {
+    opacity: 0;
+  }
+
+  &EnterActive {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  &Exit {
+    opacity: 1;
+  }
+
+  &ExitActive {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+}
