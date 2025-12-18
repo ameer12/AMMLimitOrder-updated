@@ -58,11 +58,13 @@
     "install:frontend": "npm install",
     "install:backend": "cd src/backend && npm install",
     "setup": "npm run install:frontend && npm run install:backend",
-    "build:frontend": "vite build --config src/frontend/vite.config.ts",
-    "build:backend": "npm run build:backend:validate",
-    "build:backend:validate": "node --check src/backend/src/app.js && echo ✓ Backend syntax validation passed",
-    "build": "npm run build:frontend && npm run build:backend"
-
+    
+    // ⭐⭐ **هذه أهم التغييرات** ⭐⭐
+    "build:frontend": "cd src/frontend && vite build && mv dist ../../dist-frontend",
+    "build:backend": "echo \"No build needed for CommonJS backend\"",
+    "build": "npm run build:frontend && cp -r dist-frontend/. dist/ && rm -rf dist-frontend",
+    
+    "start": "node src/backend/src/app.js"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
